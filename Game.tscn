@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Mole.tscn" type="PackedScene" id=2]
-[ext_resource path="res://bitbattle.wav" type="AudioStream" id=3]
+[ext_resource path="res://bitbattle.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Roboto-Medium.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
@@ -53,8 +53,6 @@ stream = ExtResource( 3 )
 volume_db = -25.0
 
 [node name="SpawnTime" type="Timer" parent="."]
-wait_time = 0.429
-
-[node name="Node" type="Node" parent="."]
+wait_time = 0.5
 [connection signal="pressed" from="ViewportSize/Back" to="." method="_on_Back_pressed"]
 [connection signal="timeout" from="SpawnTime" to="." method="_on_SpawnTime_timeout"]
