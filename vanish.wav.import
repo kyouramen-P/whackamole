@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/vanish.wav-b0175d5a5ec4bf95e92eb71535f0f8f5.sample"
+
+[deps]
+
+source_file="res://vanish.wav"
+dest_files=[ "res://.import/vanish.wav-b0175d5a5ec4bf95e92eb71535f0f8f5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

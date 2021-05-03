@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://Mole.tscn" type="PackedScene" id=2]
+[ext_resource path="res://bitbattle.wav" type="AudioStream" id=3]
+[ext_resource path="res://Roboto-Medium.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+font_data = ExtResource( 4 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+Mole = ExtResource( 2 )
+
+[node name="ViewportSize" type="Control" parent="."]
+margin_right = 480.0
+margin_bottom = 720.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="ViewportSize"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -55.0
+margin_right = 55.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 50, 30 )
+custom_fonts/font = SubResource( 1 )
+text = "Score: 0"
+align = 1
+valign = 1
+
+[node name="Back" type="Button" parent="ViewportSize"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -60.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 2 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -25.0
+
+[node name="SpawnTime" type="Timer" parent="."]
+wait_time = 0.429
+
+[node name="Node" type="Node" parent="."]
+[connection signal="pressed" from="ViewportSize/Back" to="." method="_on_Back_pressed"]
+[connection signal="timeout" from="SpawnTime" to="." method="_on_SpawnTime_timeout"]
